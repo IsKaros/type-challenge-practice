@@ -1,7 +1,6 @@
 type PickByType1<T, U> = {
-    [K in keyof T as K extends K ? T[K] extends U ?K:never:'11' ]:T[K]
-    // ? 下面这样写不行，但是01367却可以这样写？？
-    // [K in keyof T as string extends K ? T[K] extends U ?K:never:mever ]:T[K]
+    [K in keyof T as K extends K ? T[K] extends U ?K:never:never ]:T[K]
+    // [K in keyof T as Q extends K ? T[K] extends U ?K:never:never ]:T[K]
 }
 
 type PickByType<T, U> = {
