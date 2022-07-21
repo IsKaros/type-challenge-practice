@@ -1,0 +1,1 @@
+type Reverse<T extends any[]> = T extends [...infer Rest,infer Last] ? [Last,...Reverse<Rest>]:[]
